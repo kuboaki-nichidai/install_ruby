@@ -2,9 +2,9 @@
 
 == 自分の環境にRubyをインストールする
 
-* file:///windoww.adoc[Windows]
-* macOS → macos.adoc
-* Linux(Ubuntu) → linux.adoc
+* link:windoww.adoc[Windows]
+* link:macos.adoc[macOS]
+* link:linux.adoc[Linux(Ubuntu)]
 
 == 動作を確認する
 
