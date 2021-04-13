@@ -79,12 +79,7 @@ RubyInstallerのダウンロードページ:: `https://rubyinstaller.org/downloa
 
 [[ruby_installer_download_page]]
 .RubyInstallerをダウンロードする
-image::images/210207-0002_marked.jpg[{half-width}]
-
-
-// オリジナルは 210207-0002.jpg
-// 210207-0002_marked.jpg のようになるよう、
-// トリミングして、枠線をつけてください。
+image::210207-0002_marked.jpg[{half-width}]
 
 === Ruby をインストールする
 
@@ -94,10 +89,6 @@ image::images/210207-0002_marked.jpg[{half-width}]
 .ダウンロードしたRubyInstallerの実行ファイル
 image::GSW-20190910-161321_marked.png[ruby_installer_exe_file, {half-width}]
 
-// オリジナルは GSW-20190910-161321.jpg
-// GSW-20190910-161321_marked.jpg のようになるよう、
-// 枠線をつけてください。
-
 見つけたら、ダブルクリックして起動します。
 
 すると、ライセンス合意のダイアログが開きます（ <<license_agreement_dialog>>  ）。
@@ -105,11 +96,6 @@ image::GSW-20190910-161321_marked.png[ruby_installer_exe_file, {half-width}]
 [[license_agreement_dialog]]
 .ライセンス合意のダイアログ
 image::GSW-20190910-170454_mared.png[license_agreement_dialog, {half-width}]
-
-// オリジナルは GSW-20190910-17045.png
-// GSW-20190910-170454_mared.png のようになるよう、
-// 枠線をつけてください。
-
 
 `I accept the License.` をチェックして「Next」ボタンをクリックします。
 
@@ -121,12 +107,6 @@ image::GSW-20190910-170454_mared.png[license_agreement_dialog, {half-width}]
 .インストール先指定のダイアログ
 image::GSW-20190910-170553_marked.png[install_destination_dialog, {half-width}]
 
-
-// オリジナルは GSW-20190910-170553.png
-// GSW-20190910-170553_marked.png のようになるよう、
-// 枠線をつけてください。
-
-
 「Install」ボタンをクリックすると、追加コンポーネントを選択するダイアログが開きます（ <<additional_component_dialog>> ）。
 `MSYS2 development toolchain` をチェックします。
 
@@ -134,11 +114,6 @@ image::GSW-20190910-170553_marked.png[install_destination_dialog, {half-width}]
 [[additional_component_dialog]]
 .追加コンポーネント選択のダイアログ
 image::GSW-20190910-170610_marked.png[additional_component_dialog, {half-width}]
-
-
-// オリジナルは GSW-20190910-170610.png
-// GSW-20190910-170610_marked.png のようになるよう、
-// 枠線をつけてください。
 
 「Next」ボタンをクリックします。
 
@@ -149,22 +124,17 @@ image::GSW-20190910-170610_marked.png[additional_component_dialog, {half-width}]
 
 インストールが終わるまで、しばらく待ちます。
 
-// image::GSW-20190910-170616.png[]
-
 [[installation_progress_dialog]]
 .インストール中のダイアログ
 image::GSW-20190910-170639.png[installation_progress_dialog,  {half-width}]
 
 途中で、MSYS2のインストールウィザードが起動します（ <<install_msys2_dialog>> ）。
 
-
 [[install_msys2_dialog]]
 .MSYS2のインストールウィザードが起動した
 image::GSW-20190910-171020.png[installation_complete_dialog,  {half-width}]
 
 コマンドプロンプトが開いて、MSYS2のインストーラが起動します（ <<development_toolchain_installation_start>> ）。
-
-// image::GSW-20190910-171113.png[]
 
 [[development_toolchain_installation_start]]
 .開発用ツールチェーンのインストール開始画面
@@ -174,26 +144,16 @@ image::GSW-20190910-171214.png[development_toolchain_installation_start,  {half-
 
 パッケージの取得とインストールが始まります（ <<development_toolchain_installation_finish>> ）。
 再び番号の選択街になれば、インストールは完了です。
-// image::GSW-20190910-171220.png[]
 
 [[development_toolchain_installation_finish]]
 .開発用ツールチェーンのインストール完了画面
 image::GSW-20190910-171347.png[development_toolchain_installation_finish,  {half-width}]
-
-////
-新しくコマンドプロンプトを開き直して、Rubyのバージョンを調べてみましょう。
-
-[[ruby_execution_check]]
-.コマンドプロンプトからRubyを起動してみる
-image::GSW-20190910-171414.png[ruby_execution_check,  {half-width}]
-////
 
 インストールしたRubyの入っているディレクトリ（フォルダ）を確認しておきましょう。
 
 [[ruby_location_check]]
 .Rubvのインストール先ディレクトリのチェック
 image::GSW-20190910-171458.png[ruby_location_check,  {half-width}]
-
 
 === インストールできたか確認する
 
