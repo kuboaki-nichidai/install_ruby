@@ -1,3 +1,6 @@
+:linkcss:
+:stylesdir: css
+:stylesheet: mystyle.css
 :twoinches: width='360'
 :full-width: width='100%'
 :three-quarters-width: width='75%'
