@@ -24,7 +24,9 @@
 
 = Rubyをインストールする
 
-Windowsの場合について説明します。 windows.adoc[] 。
+Windowsの場合について説明します。 
+
+file:///windows.adoc[] 。
 
 MacやLinuxでは予め入っているものを使えばよいです。
 
