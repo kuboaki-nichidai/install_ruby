@@ -15,6 +15,9 @@
 :example-caption: リスト
 :table-caption: 表
 :appendix-caption: 付録
+:xrefstyle: full
+:section-refsig:
+:chapter-refsig:
 
 = Rubyをインストールする
 
