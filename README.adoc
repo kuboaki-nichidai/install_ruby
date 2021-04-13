@@ -15,7 +15,7 @@
 :example-caption: リスト
 :table-caption: 表
 :appendix-caption: 付録
-:xrefstyle: full
+:xrefstyle: short
 :section-refsig:
 :chapter-refsig:
 
