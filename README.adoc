@@ -7,6 +7,10 @@
 :one-thirds-width: width='33%'
 :one-quarters-width: width='25%'
 :thumbnail: width='60'
+:imagesdir: images
+:sourcesdir: codes
+:icons: font
+:hide-uri-scheme!:
 
 = Rubyをインストールする
 
