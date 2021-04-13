@@ -1,7 +1,3 @@
-include::image_size_matter.adoc[]
-:imagesdir: images
-:sourcesdir: codes
-
 = Rubyをインストールする
 
 Windowsの場合について説明します。
@@ -68,7 +64,7 @@ RubyInstallerのダウンロードページ:: `https://rubyinstaller.org/downloa
 
 [[ruby_installer_download_page]]
 .RubyInstallerをダウンロードする
-image::210207-0002_marked.jpg[{half-width}]
+image::images/210207-0002_marked.jpg[{half-width}]
 
 
 // オリジナルは 210207-0002.jpg
