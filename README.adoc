@@ -11,11 +11,10 @@
 :sourcesdir: codes
 :icons: font
 :hide-uri-scheme!:
-
-:autoxref-imagecaption: 図 %d.%d
-:autoxref-listingcaption: リスト %d.%d
-:autoxref-tablecaption: 表 %d.%d
-:autoxref-examplecaption: リスト %d.%d
+:figure-caption: 図
+:example-caption: リスト
+:table-caption: 表
+:appendix-caption: 付録
 
 = Rubyをインストールする
 
