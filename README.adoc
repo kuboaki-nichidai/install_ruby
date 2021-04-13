@@ -1,3 +1,7 @@
+include::image_size_matter.adoc[]
+:imagesdir: images
+:sourcesdir: codes
+
 = Rubyをインストールする
 
 Windowsの場合について説明します。
