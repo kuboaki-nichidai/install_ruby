@@ -2,9 +2,9 @@
 
 == 自分の環境にRubyをインストールする
 
-* Windows → windoww.adoc[]
-* macOS → macos.adoc[]
-* Linux(Ubuntu) → linux.adoc[]
+* Windows → windoww.adoc
+* macOS → macos.adoc
+* Linux(Ubuntu) → linux.adoc
 
 == 動作を確認する
 
