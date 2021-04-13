@@ -2,7 +2,7 @@
 
 == 自分の環境にRubyをインストールする
 
-* Windows → file:///windoww.adoc
+* Windows → file:///windoww.adoc[]
 * macOS → macos.adoc
 * Linux(Ubuntu) → linux.adoc
 
