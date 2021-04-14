@@ -33,7 +33,7 @@ NOTE: 下記文章中では、ワークスペースとして `Users\kuboaki\ruby
 * link:linux.adoc[Linux(Ubuntu)]
 
 [[make_simple_script_and_check]]
-== 簡単なスクリプトの作成と実行
+== 【演習】簡単なスクリプトの作成と実行
 
 Rubyのインストールが済み、演習に使うワークスペースも準備できましたので、簡単なプログラムを作成して動作を確認しましょう。
 
@@ -46,8 +46,8 @@ Rubyのインストールが済み、演習に使うワークスペースも準�
 [example]
 --
 . みなさんが用意したテキストエディターを起動します。
-. 新規ファイルを作成します。ファイル名を `test01.rb` としましょう。
-.  <<test01.rb>> のように入力してみましょう。 各行の左端の数字は行番号です（入力しません）。 +
+. 新規ファイルを作成します。ファイル名を `hello.rb` としましょう。
+.  <<hello.rb>> のように入力してみましょう。 各行の左端の数字は行番号です（入力しません）。 +
 入力するプログラムの一部ではありませんので中止しましょう。また、 `#` から始まる行はコメントです。面倒なら今回は省略してもかまいません。
 . 入力できたら、ワークスペース（わたしの場合 `C:\Users\kuboaki\rubybook` ）に保存します。
 --
@@ -99,11 +99,11 @@ C:\Users\kuboaki\rubybook>
 --
 
 
-移動できたら、 `dir` （MacやLinuxでは `ls` ）を使って、作成したファイルがこのディレクトリに保存できていることを確認します（ <<check_test01.rb_created>> ）。
+移動できたら、 `dir` （MacやLinuxでは `ls` ）を使って、作成したファイルがこのディレクトリに保存できていることを確認します（ <<check_hello.rb_created>> ）。
 見つからないようなら、テキストエディターで保存したときに保存した場所を確認してみましょう。
 
 
-[[check_test01.rb_created]]
+[[check_hello.rb_created]]
 .【端末】 `hello.rb` が保存できていることを確認する
 [example]
 --
@@ -129,9 +129,9 @@ C:\Users\kuboaki\rubybook>dir
 ==== Rubyのプログラムを動かす
 
 作成したプログラムを実行してみましょう。
-コマンド名 `ruby` に続けて作成したプログラムのファイル名を書きます（ <<run_test01.rb>> ）。
+コマンド名 `ruby` に続けて作成したプログラムのファイル名を書きます（ <<run_hello.rb>> ）。
 
-[[run_test01.rb]]
+[[run_hello.rb]]
 .【端末】 `hello.rb` を実行する
 [example]
 --
@@ -141,9 +141,9 @@ C:\Users\kuboaki\rubybook>ruby hello.rb
 ----
 --
 
-実行すると、 <<output_test01.rb>> のような出力が得られます。
+実行すると、 <<output_hello.rb>> のような出力が得られます。
 
-[[output_test01.rb]]
+[[output_hello.rb]]
 .【端末】 `hello.rb` を実行結果
 [example]
 --
@@ -170,11 +170,11 @@ hello.rb
 --
 [source,console]
 ----
-C:\Users\kuboaki\rubybook>ruby test01.rb
-test01.rb:4: invalid multibyte char (UTF-8)
-test01.rb:4: invalid multibyte char (UTF-8)
+C:\Users\kuboaki\rubybook>ruby hello.rb
+hello.rb:4: invalid multibyte char (UTF-8)
+hello.rb:4: invalid multibyte char (UTF-8)
 （略）
-test01.rb:4: invalid multibyte char (UTF-8)
+hello.rb:4: invalid multibyte char (UTF-8)
 ----
 --
 
@@ -190,8 +190,8 @@ test01.rb:4: invalid multibyte char (UTF-8)
 --
 [source,console]
 ----
-C:\Users\kuboaki\rubybook>ruby test01.rb
-test01.rb:4: unterminated string meets end of file
+C:\Users\kuboaki\rubybook>ruby hello.rb
+hello.rb:4: unterminated string meets end of file
 ...れが日本語の表示’
 ----
 --
