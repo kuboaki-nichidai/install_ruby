@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.12">
+<title>自分の PC の環境を確認する（Linux）</title>
+<link rel="stylesheet" href="css/mystyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+</div>
+<div id="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+下記文章中では、ワークスペースとして <code>Users\kuboaki\rubybok</code> といった場所を指定していますが、これは、みなさんがCloneしたリポジトリのディレクトリ名で読み替えてください。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect1">
+<h2 id="check_ruby_installed_on_linux">自分の PC の環境を確認する（Linux）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Linuxには、多数のディストリビューションがあります。
+これらのすべての環境について説明するわけにもいかないので、ここでは Ubuntu 20.04 を使って説明します。</p>
+</div>
+<div class="sect2">
+<h3 id="_ターミナルを開く">ターミナルを開く</h3>
+<div class="paragraph">
+<p>ターミナルを開きます（ <a href="#terminal_prompt_01">図 4</a> ）。
+ターミナルを開くには、画面左下の「 Show Application 」アイコ（ <a href="#terminal_prompt_02">図 1</a> ）ンをクリックして、表示されるアプリケーションから「 Terminal 」を選びます（ <a href="#terminal_prompt_03">図 2</a> ）。
+または、デスクトップでマウスの右クリックでポップアップメニューを開いて「Terminal」を選びます（ <a href="#terminal_prompt_04">図 3</a> ）。</p>
+</div>
+<div id="terminal_prompt_02" class="imageblock">
+<div class="content">
+<img src="images/Screenshot2021-02-10_01-29-43_marked.png" alt="Screenshot2021 02 10 01 29 43 marked" width="50%">
+</div>
+<div class="title">図 1. 「 Show Application 」アイコンからアプリケーションリストを開く</div>
+</div>
+<div id="terminal_prompt_03" class="imageblock">
+<div class="content">
+<img src="images/Screenshot2021-02-10_01-29-58_makred.png" alt="Screenshot2021 02 10 01 29 58 makred" width="100%">
+</div>
+<div class="title">図 2. アプリケーションリストから「Terminal」を開く</div>
+</div>
+<div id="terminal_prompt_04" class="imageblock">
+<div class="content">
+<img src="images/Screenshot2021-02-10_01-30-34_marked.png" alt="Screenshot2021 02 10 01 30 34 marked" width="50%">
+</div>
+<div class="title">図 3. デスクトップのポップアップメニューからターミナルを開く</div>
+</div>
+<div id="terminal_prompt_01" class="imageblock">
+<div class="content">
+<img src="images/Screenshot2021-02-10_06-34-13_marked.png" alt="Screenshot2021 02 10 06 34 13 marked" width="50%">
+</div>
+<div class="title">図 4. ターミナルのウィンドウ</div>
+</div>
+<div class="paragraph">
+<p>ウィンドウに表示されている「 <code>~</code> （チルダ）」は、現在のディレクトリがホームディレクトリであることを示しています。
+ウィンドウの色やフォントは、みなさんのターミナルの設定で異なっているでしょう。
+また、表示されるプロンプトは、みなさんが使っているシェルの設定によって異なる場合があります。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rubyを起動してみる">Rubyを起動してみる</h3>
+<div class="paragraph">
+<p>Ruby が使える状態か判断するために、いちど Ruby を起動してみましょう。</p>
+</div>
+<div class="paragraph">
+<p>ターミナルから、 <a href="#start_ruby_linux_01">リスト 1</a> のように、Rubyコマンドにバージョン番号表示のオプションを指定して起動します。
+言語の名前は「Ruby」ですが、プログラムの名前は小文字で <code>ruby</code> と入力します。その後ろに空白を入れて、 <code>--</code> （ハイフンを2つ）に続けて <code>version</code> と入力します。</p>
+</div>
+<div id="start_ruby_linux_01" class="exampleblock">
+<div class="title">リスト 1. 【端末】Rubyを起動する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ ruby --version <i class="conum" data-value="1"></i><b>(1)</b>
+ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Rubyを <code>--version</code> オプションをつけて起動して、バージョン番号を表示した。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>この表示をみると、バージョンが <code>2.7.0p0</code> のRubyがインストールされているのがわかります。</p>
+</div>
+<div class="paragraph">
+<p>もし、 <a href="#start_ruby_linux_02">リスト 2</a> のような表示になった場合には、Rubyがインストールできていません。</p>
+</div>
+<div id="start_ruby_linux_02" class="exampleblock">
+<div class="title">リスト 2. 【端末】Rubyが起動できなかったとき</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ ruby --version
+
+kuboaki@elwood ~ $ ruby --version
+
+Command 'ruby' not found, but can be installed with:
+
+sudo apt install ruby <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>sudo</code> は、スーパーユーザー（ root ）権限が必要なときに使うコマンド。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Rubyの動作が確認できた人は「 <a href="#make_simple_script_and_check">[make_simple_script_and_check]</a> 」へ進みましょう。
+インストールできていない場合には「 <a href="#install_ruby_on_win">[install_ruby_on_win]</a> 」へ進みましょう。</p>
+</div>
+<div class="paragraph">
+<p>また、インストールされていても、バージョンが古すぎると、この本の演習が期待通り動作しないことがあります。
+確認したバージョンが 2.4 あるいはそれ以前の場合は、この機会に新しいバージョンをインストールしましょう。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install_ruby_on_linux">自分の PC に Ruby を追加する（Linux）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rubyがインストールされていないときは、パッケージマネージャを使ってインストールしましょう。</p>
+</div>
+<div class="sect2">
+<h3 id="_rubyパッケージを追加する方法">Rubyパッケージを追加する方法</h3>
+<div class="paragraph">
+<p>Ubuntuの場合は、パッケージマネージ用コマンド <code>apt</code> を使ってインストールします（ <a href="#install_ruby_linux_01">リスト 3</a> ）。</p>
+</div>
+<div id="install_ruby_linux_01" class="exampleblock">
+<div class="title">リスト 3. 【端末】aptでRubyをインストールする</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ sudo apt install ruby <i class="conum" data-value="1"></i><b>(1)</b>
+[sudo] password for kuboaki:  <i class="conum" data-value="2"></i><b>(2)</b>
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  fonts-lato javascript-common libjs-jquery libruby2.5 libssl1.1 rake
+（略）
+Setting up libruby2.5:amd64 (2.5.1-1ubuntu1.7) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.2) ...</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>sudo</code> で管理者権限を使ってインストールする。ログインユーザーのパスワードを入力する。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>管理者権限を使おうとしている人（自分）のパスワードを入力する。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rbenv_02">rbenvを使って追加する方法</h3>
+<div class="paragraph">
+<p>Rubyの複数のバージョンを、プロジェクトや作業用のディレクトリごとに切り替えて使いたいときは、 rbenv <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> を使います。</p>
+</div>
+<div class="paragraph">
+<p>まず、 <code>rbenv</code> をインストールします（ <a href="#rbenv_install_ruby_11">リスト 4</a> ）。</p>
+</div>
+<div id="rbenv_install_ruby_11" class="exampleblock">
+<div class="title">リスト 4. 【端末】aptを使って <code>rbenv</code> をインストールする</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">kuboaki@elwood ~ $ sudo apt install rbenv <i class="conum" data-value="1"></i><b>(1)</b>
+[sudo] password for kuboaki: <i class="conum" data-value="2"></i><b>(2)</b>
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+（略）
+Do you want to continue? [Y/n] <i class="conum" data-value="3"></i><b>(3)</b>
+（略）</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>apt</code> コマンドは、インストールしたい複数のパッケージを列挙すれば、まとめてインストールできる。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>管理者権限を使おうとしている人（自分）のパスワードを入力する。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>Y</code> を入力する。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>次に、rbenv を使うための初期処理を、ターミナルを起動するとき読み込まれるシェルスクリプトに追加します。
+ターミナルで使っているシェルは変更可能ですが、ここでは <code>bash</code> の場合について説明します。
+編集にはテキストエディターを使います。</p>
+</div>
+<div class="paragraph">
+<p>bashの場合は、 <code>~/.bashrc</code> に初期処理を追記します（ <a href="#rbenv_install_ruby_12">リスト 5</a> ）。</p>
+</div>
+<div id="rbenv_install_ruby_12" class="exampleblock">
+<div class="title">リスト 5. 【BASH】 <code>~/.bashrc</code> の末尾に追記する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv &gt; /dev/null; then eval "$(rbenv init -)"; fi</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>編集が済んだらターミナルを開き直します。 <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>もし、まだGitをインストールしていない場合には、インストールしてから実行します（ <a href="#rbenv_install_ruby_13">リスト 6</a> ）。</p>
+</div>
+<div id="rbenv_install_ruby_13" class="exampleblock">
+<div class="title">リスト 6. 【端末】 Gitをインストールする（まだインストールしていない場合）</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">kuboaki@elwood ~ $ sudo apt install git
+[sudo] password for kuboaki:
+Reading package lists... Done
+（略）</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Gitを使い始めるときにはいくつか設定が必要ですが、最低限次の項目を設定しておきましょう（ <a href="#git_init_01">リスト 7</a> ）。</p>
+</div>
+<div id="git_init_01" class="exampleblock">
+<div class="title">リスト 7. 【端末】 Gitに登録しているユーザー名とメールアドレスを設定する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ git config --global user.name kuboaki <i class="conum" data-value="1"></i><b>(1)</b>
+$ git config --global user.email kuboaki@gmail.com <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Gitに登録しているユーザー名を設定した。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Gitに登録しているメールアドレスを設定した。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>次に、 <code>ruby-build</code> をインストールします（ <a href="#rbenv_install_ruby_14">リスト 8</a> ）。
+これで、 <code>rbenv</code> がビルドに使えるRubyのバージョンリストが最新になります。</p>
+</div>
+<div id="rbenv_install_ruby_14" class="exampleblock">
+<div class="title">リスト 8. 【端末】aptを使って <code>ruby-build</code> をインストールする</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">kuboaki@elwood ~ $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>利用可能な Rubyバージョンの一覧を表示してみましょう（ <a href="#rbenv_install_ruby_15">リスト 9</a> ）。</p>
+</div>
+<div id="rbenv_install_ruby_15" class="exampleblock">
+<div class="title">リスト 9. 【端末】 利用可能なRubyバージョンの一覧を調べる</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">kuboaki@elwood ~ $ rbenv install --list
+Available versions:
+  1.8.5-p52
+  1.8.5-p113
+（略）
+  2.7.1
+  2.7.2
+（略）
+  3.0.0
+（略）</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>ここから使いたいバージョンを選びます。
+この本の演習では、2.5 以降であれば使えます。
+調べた中から、比較的新しいバージョンを使うようにしましょう。</p>
+</div>
+<div class="paragraph">
+<p>ここでは、 <code>2.7.1</code> をインストールしてみます（ <a href="#rbenv_install_ruby_16">リスト 10</a> ）。
+少し時間がかかりますが、待ちましょう。</p>
+</div>
+<div id="rbenv_install_ruby_16" class="exampleblock">
+<div class="title">リスト 10. 【端末】  <code>2.7.2</code> をインストールする</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">kuboaki@elwood ~ $ rbenv install 2.7.1
+Downloading ruby-2.7.1.tar.bz2...
+-&gt; https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.bz2
+Installing ruby-2.7.1...
+
+（インストールが終わるまで待つ）
+
+Installed ruby-2.7.1 to /Users/kuboaki/.rbenv/versions/2.7.2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>インストールが終わったら、演習用に作成したディレクトリ（演習用のワークスペースと呼ぶことにしましたね）へ移動します（ <a href="#cd_work_dir_11">リスト 11</a>  ）。</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>rbenvを使うと、利用するディレクトリに応じて Rubyのバージョンを選択できるようになります。
+rbenv を使ったRubyを使うときは、自分が使いたいディレクトリへ移動して、使用するバージョンを設定しましょう。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="cd_work_dir_11" class="exampleblock">
+<div class="title">リスト 11. 【端末】演習用ワークスペースへ移動する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">kuboaki@elwood ~ $ mkdir rubybook <i class="conum" data-value="1"></i><b>(1)</b>
+kuboaki@elwood ~ $ cd rubybook <i class="conum" data-value="2"></i><b>(2)</b>
+kuboaki@elwood ~/rubybook $ <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>もしワークスペース用ディレクトリを作っていなかったら、作成する。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>作成したワークスペース用ディレクトリへ移動した。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>この <code>rubybok</code> はプロンプト（入力促進記号）として表示しているディレクトリ名。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>ワークスペースで使うRubyを <code>2.7.1</code> に設定します。
+リスト中、行頭の <code>rubybook</code> はプロンプトとして表示している現在のディレクトリ名なのに注意してください（ <a href="#rbenv_install_ruby_17">リスト 12</a> ）。</p>
+</div>
+<div id="rbenv_install_ruby_17" class="exampleblock">
+<div class="title">リスト 12. 【端末】ワークスペースのRubyを  <code>2.7.1</code> に設定する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">kuboaki@elwood ~/rubybook $ rbenv local 2.7.1 <i class="conum" data-value="1"></i><b>(1)</b>
+kuboaki@elwood ~/rubybook $ rbenv versions <i class="conum" data-value="2"></i><b>(2)</b>
+  system
+* 2.7.1 (set by /home/kuboaki/rubybook/.ruby-version) <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>local</code> コマンドで、現在のディレクトリで使うRubyのバージョンを設定している。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>versions</code> コマンドで rbenvでインストールしたRubyのバージョンを表示した。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>*</code> がついているのが、現在のディレクトリが設定しているRubyのバージョン。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_インストールできたか確認する">インストールできたか確認する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rubyを起動してみましょう（ <a href="#start_ruby_linux_04">リスト 13</a>  ）。</p>
+</div>
+<div id="start_ruby_linux_04" class="exampleblock">
+<div class="title">リスト 13. 【端末】Rubyを起動する（ワークスペース）</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">kuboaki@elwood ~ $ cd rubybook
+kuboaki@elwood ~/rubybook $ ruby --version
+ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-linux]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>この表示では、ワークスペースでは、バージョンが <code>2.7.1p83</code> のRubyが使われるていることがわかります。</p>
+</div>
+<div class="paragraph">
+<p>これで、Rubyが使えるようになりました。
+「 <a href="#make_simple_script_and_check">[make_simple_script_and_check]</a> 」へ進みましょう
+問題が見つかった場合には、これまでの手順を見直してみましょう。</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <code><a href="https://github.com/rbenv/rbenv" class="bare">https://github.com/rbenv/rbenv</a></code>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. わかる人は source コマンドを使ってもかまいません。
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2021-04-15 03:46:49 +0900
+</div>
+</div>
+</body>
+</html>

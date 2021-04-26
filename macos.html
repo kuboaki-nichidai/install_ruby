@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.12">
+<title>Rubyをインストールする（macOS）</title>
+<link rel="stylesheet" href="css/mystyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+</div>
+<div id="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+下記文章中では、ワークスペースとして <code>Users\kuboaki\rubybok</code> といった場所を指定していますが、これは、みなさんがCloneしたリポジトリのディレクトリ名で読み替えてください。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect1">
+<h2 id="_rubyをインストールするmacos">Rubyをインストールする（macOS）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Macには、MacOSとともにRubyが提供されていますので、そのまま使ってもよいでしょう。
+あるいは、他の仕事や演習でRubyを使っていて、別のRubyがインストールしてある場合もあるでしょう。</p>
+</div>
+<div class="paragraph">
+<p>そこで、まず、自分のMacで使えるRubyのバージョンを確認しましょう。</p>
+</div>
+<div class="sect2">
+<h3 id="_ターミナルを開く">ターミナルを開く</h3>
+<div class="paragraph">
+<p>ターミナルを開きます（ <a href="#terminal_prompt_00">図 1</a> ）。
+ターミナルを起動するには、Finderで「アプリケーション」から探すか、Launchpadから「ターミナル」を入力するとできます。</p>
+</div>
+<div id="terminal_prompt_00" class="imageblock">
+<div class="content">
+<img src="images/210207-0001_trimmed.jpg" alt="210207 0001 trimmed" width="50%">
+</div>
+<div class="title">図 1. ターミナルのウィンドウ</div>
+</div>
+<div class="paragraph">
+<p>ウィンドウに表示されている「 <code>~</code> （チルダ）」は、現在のディレクトリがホームディレクトリであることを示しています。
+ウィンドウの色やフォントは、みなさんのターミナルの設定で異なっているでしょう。
+また、表示されるプロンプトは、みなさんが使っているシェルの設定によって異なる場合があります。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rubyを起動してみる">Rubyを起動してみる</h3>
+<div class="paragraph">
+<p>最近のMacには、あらかじめ Rubyがインストールされています。
+システムにインストール去れているRubyを起動してみましょう。
+私が試している環境は、macOS Catalina（10.15.7）です。</p>
+</div>
+<div class="paragraph">
+<p>プログラム名の場合は小文字で <code>ruby</code> と入力します。その後ろに空白を入れて、 <code>--</code> （ハイフン2つ）に続けて <code>version</code> と入力します（ <a href="#start_ruby_mac_03">リスト 13</a> ）。</p>
+</div>
+<div id="start_run_mac_01" class="exampleblock">
+<div class="title">リスト 1. 【端末】Rubyを起動する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ ls -l /usr/bin/ruby <i class="conum" data-value="1"></i><b>(1)</b>
+-r-xr-xr-x  1 root  wheel  36624  9 22 09:29 /usr/bin/ruby
+~ /usr/bin/ruby --version <i class="conum" data-value="2"></i><b>(2)</b>
+ruby 2.6.3p62 (2019-04-16 revision 67580) [universal.x86_64-darwin19]
+~</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>システムにあらかじめインストールされているRubyの所在を確認した。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Rubyを <code>--version</code> オプションをつけて起動して、バージョン番号を表示した。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>この表示をみると、バージョンが <code>ruby 2.6.3p62</code> のRubyがインストールされているのがわかります。</p>
+</div>
+<div class="paragraph">
+<p>インストールできていない場合には「 <a href="#install_ruby_on_mac">自分の PC に Ruby を追加する（Mac）</a> 」へ進みましょう。</p>
+</div>
+<div class="paragraph">
+<p>また、インストールされているバージョンが古すぎると、この本の期待した通りに演習できないことがあります。
+確認したバージョンが2.4やそれより前の場合は、この機会に新しいバージョンをインストールしましょう。</p>
+</div>
+<div class="paragraph">
+<p>これで、Rubyが使えるようになりました。
+「 <a href="#make_simple_script_and_check">[make_simple_script_and_check]</a> 」へ進みましょう
+問題が見つかった場合には、これまでの手順を見直してみましょう。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="install_ruby_on_mac">自分の PC に Ruby を追加する（Mac）</h3>
+<div class="paragraph">
+<p>MacにRubyをインストールする方法はいくつかありますが、2つだけ紹介しておきます。</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>HomeBrewやrbenvを使ってインストールする場合、インストール作業中にネットワーク上のサーバーからファイルをダウンロードします。
+また、ダウンロードするファイルも、ファイルサイズが大きくファイル数も多いです。
+必ず、長時間安定して接続できて、大量にダウンロードできるネットワークに接続した状態で作業しましょう。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_homebrewを使って追加する方法">Homebrewを使って追加する方法</h4>
+<div class="paragraph">
+<p>Homebrewは、パッケージの導入や保守をするパッケージマネージャと呼ばれるツールの一種です。
+Rubyだけではなく、多くのパッケージを提供しています。</p>
+</div>
+<div class="paragraph">
+<p>プロジェクトやディレクトリによらず、同じバージョンのRubyを使いたい人は、HomeBrewの提供するRubyのパッケージを使うとよいでしょう。
+そうではなく、プロジェクトやディレクトリによって異なるバージョンを切り替えて使いたい場合は、<a href="#rbenv_01">rbenvを使って追加する方法</a> を参照してください。</p>
+</div>
+<div class="paragraph">
+<p>HomeBrewを導入するには、HomeBrewのWebサイトを訪問して、トップページの指示に従います。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">HomeBrewのWebサイト</dt>
+<dd>
+<p><code><a href="https://brew.sh/index_ja" class="bare">https://brew.sh/index_ja</a></code></p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>HomeBrewを使うには「Command Line Tools for Xcode」が必要です。
+最近のHomeBrewには、「Command Line Tools for Xcode」を導入するスクリプトが含まれているようですが、もしコンパイラのインストールで躓くようなら、個別にインストールしておくとHomeBrewのインストールがスムーズに進むでしょう。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>HomeBrewが導入できたら、Rubyのパッケージをインストールします（ <a href="#brew_install_ruby_01">リスト 2</a> ）。</p>
+</div>
+<div id="brew_install_ruby_01" class="exampleblock">
+<div class="title">リスト 2. 【端末】HomeBrewでRubyをインストールする</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ brew install ruby</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>特定のバージョンを指定してインストールする方法もあります（ <a href="#brew_install_ruby_02">リスト 3</a> ）。</p>
+</div>
+<div id="brew_install_ruby_02" class="exampleblock">
+<div class="title">リスト 3. 【端末】HomeBrewでバージョンを指定してRubyをインストールする（2.7を指定した例）</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ brew install ruby@2.7</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="rbenv_01">rbenvを使って追加する方法</h4>
+<div class="paragraph">
+<p>Rubyの複数のバージョンを、プロジェクトや作業用のディレクトリごとに切り替えて使いたいときは、 rbenv （ <code><a href="https://github.com/rbenv/rbenv" class="bare">https://github.com/rbenv/rbenv</a></code> ）を使います。</p>
+</div>
+<div class="paragraph">
+<p>この方法では、HomeBrewを使いますが、HomeBrewのRubyパッケージはインストールしません。
+代わりに、rbenv パッケージと ruby-build パッケージをインストールして、複数のRubyを切り替えて使えるしくみを用意します。</p>
+</div>
+<div class="paragraph">
+<p>まず。rbenv と ruby-build をインストールします（ <a href="#rbenv_install_ruby_01">リスト 4</a> ）。</p>
+</div>
+<div id="rbenv_install_ruby_01" class="exampleblock">
+<div class="title">リスト 4. 【端末】HomeBrewを使って  <code>rbenv</code> と <code>ruby-build</code> をインストールする</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ brew install rbenv ruby-install <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>brew</code> コマンドは、インストールしたい複数のパッケージを列挙すれば、まとめてインストールできる。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>次に、rbenv を使うための初期処理を、ターミナルを起動するとき読み込まれるシェルスクリプトに追加します。
+あらかじめ、自分がターミナルで使っているシェルを確認しておきます（ <a href="#check_termial_shell">リスト 5</a> ）。</p>
+</div>
+<div id="check_termial_shell" class="exampleblock">
+<div class="title">リスト 5. 【端末】ターミナル起動時に読み込まれるシェルの種類を調べる</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ dscl . -read /Users/$USER UserShell
+UserShell: /usr/local/bin/zsh <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>zsh</code> を使っている場合の例</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>自分が使っているシェルに応じて、ターミナル起動時に読み込まれるシェルスクリプトを編集します。
+編集にはテキストエディターを使います。</p>
+</div>
+<div class="paragraph">
+<p>bashの場合は、 <code>~/.bashrc</code> に初期処理を追記します（ <a href="#rbenv_install_ruby_02">リスト 6</a> ）。</p>
+</div>
+<div id="rbenv_install_ruby_02" class="exampleblock">
+<div class="title">リスト 6. 【BASH】 <code>~/.bashrc</code> の末尾に追記する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv &gt; /dev/null; then eval "$(rbenv init -)"; fi</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>zshの場合は、<code>~/.zshenv</code> と <code>~/.zshrc</code> に初期処理を追記します（ <a href="#rbenv_install_ruby_03">リスト 7</a> 、 <a href="#rbenv_install_ruby_04">リスト 8</a> ）。
+<code>~/.zshenv</code> がないときは、新しく作成します。</p>
+</div>
+<div id="rbenv_install_ruby_03" class="exampleblock">
+<div class="title">リスト 7. 【ZSH】 <code>~/.zshenv</code> の末尾に環境変数を追記する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="rbenv_install_ruby_04" class="exampleblock">
+<div class="title">リスト 8. 【ZSH】 <code>~/.zshrc</code> の末尾に追記する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">eval "$(rbenv init - zsh)"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>bash、zsh ともに編集が済んだらターミナルを開き直します。
+わかる人は source コマンドを使ってもかまいません。</p>
+</div>
+<div class="paragraph">
+<p>利用可能な Rubyバージョンの一覧を表示してみましょう（ <a href="#rbenv_install_ruby_05">リスト 9</a> ）。</p>
+</div>
+<div id="rbenv_install_ruby_05" class="exampleblock">
+<div class="title">リスト 9. 【端末】 利用可能なRubyバージョンの一覧を調べる</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ rbenv install --list
+2.5.8
+2.6.6
+2.7.2
+3.0.0
+（略）</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>ここから使いたいバージョンを選びます。
+この本の演習では、2.5 以降であれば使えます。
+調べた中から、比較的新しいバージョンを使うようにしましょう。</p>
+</div>
+<div class="paragraph">
+<p>ここでは、 <code>2.7.2</code> をインストールしてみます（ <a href="#rbenv_install_ruby_06">リスト 10</a> ）。
+少し時間がかかりますが、待ちましょう。</p>
+</div>
+<div id="rbenv_install_ruby_06" class="exampleblock">
+<div class="title">リスト 10. 【端末】  <code>2.7.2</code> をインストールする</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ rbenv install 2.7.2
+Downloading ruby-2.7.2.tar.bz2...
+-&gt; https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.2.tar.bz2
+Installing ruby-2.7.2...
+ruby-build: using readline from homebrew
+
+（インストールが終わるまで待つ）
+
+Installed ruby-2.7.2 to /Users/kuboaki/.rbenv/versions/2.7.2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>インストールが終わったら、演習用に作成したディレクトリ（演習用のワークスペースと呼ぶことにしましたね）へ移動します（ <a href="#cd_work_dir_01">リスト 11</a>  ）。</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>rbenvを使うと、利用するディレクトリに応じて Rubyのバージョンを選択できるようになります。
+rbenv を使ったRubyを使うときは、自分が使いたいディレクトリへ移動して、使用するバージョンを設定しましょう。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="cd_work_dir_01" class="exampleblock">
+<div class="title">リスト 11. 【端末】演習用ワークスペースへ移動する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ mkdir rubybook <i class="conum" data-value="1"></i><b>(1)</b>
+~ cd rubybook <i class="conum" data-value="2"></i><b>(2)</b>
+rubybook <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>もしワークスペース用ディレクトリを作っていなかったら、作成する。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>作成したワークスペース用ディレクトリへ移動した。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>この <code>rubybok</code> はプロンプト（入力促進記号）として表示しているディレクトリ名。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>ワークスペースで使うRubyを <code>2.7.2</code> に設定します。
+リスト中、行頭の <code>rubybook</code> はプロンプトとして表示している現在のディレクトリ名なのに注意してください（ <a href="#rbenv_install_ruby_07">リスト 12</a> ）。</p>
+</div>
+<div id="rbenv_install_ruby_07" class="exampleblock">
+<div class="title">リスト 12. 【端末】ワークスペースのRubyを  <code>2.7.2</code> に設定する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">rubybook rbenv local 2.7.2 <i class="conum" data-value="1"></i><b>(1)</b>
+rubybook rbenv versions <i class="conum" data-value="2"></i><b>(2)</b>
+  system
+  2.7.1
+* 2.7.2 (set by /Users/kuboaki/rubybook/.ruby-version) <i class="conum" data-value="3"></i><b>(3)</b>
+  3.0.0</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>local</code> コマンドで、現在のディレクトリで使うRubyのバージョンを設定している。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>versions</code> コマンドで rbenvでインストールしたRubyのバージョンを表示した。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>*</code> がついているのが、現在のディレクトリが設定しているRubyのバージョン。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_インストールできたか確認する">インストールできたか確認する</h3>
+<div class="paragraph">
+<p>Ruby を起動してみましょう。</p>
+</div>
+<div class="paragraph">
+<p>ターミナルを開きます。 <a href="#start_ruby_mac_03">リスト 13</a> のように、Rubyコマンドにバージョン番号表示のオプションを指定して起動します。</p>
+</div>
+<div id="start_ruby_mac_03" class="exampleblock">
+<div class="title">リスト 13. 【端末】Rubyを起動する（ホームディレクトリ）</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ ruby --version
+ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-darwin19]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>この表示では、ホームディレクトリでは、バージョンが <code>2.6.4.p104</code> のRubyが使われていることががわかります。</p>
+</div>
+<div class="paragraph">
+<p>では、ワークスペースの場合はどうでしょう（ <a href="#start_ruby_mac_04">リスト 14</a> ）。</p>
+</div>
+<div id="start_ruby_mac_04" class="exampleblock">
+<div class="title">リスト 14. 【端末】Rubyを起動する（ワークスペース）</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ cd rubybook
+rubybooy ruby --version
+ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin19]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>この表示では、ワークスペースでは、バージョンが <code>2.7.2p137</code> のRubyが使われるていることがわかります。</p>
+</div>
+<div class="paragraph">
+<p>もし、 <a href="#start_ruby_mac_05">リスト 15</a> のような表示になった場合には、Rubyのインストールで問題が起きているか、起動できない状態になっています。</p>
+</div>
+<div id="start_ruby_mac_05" class="exampleblock">
+<div class="title">リスト 15. 【端末】Rubyが起動できなかったとき</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">~ ruby --version
+zsh: command not found: ruby</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>この場合は、インストールのどこかに問題があった可能性があります。
+インストールした手順を見直してみましょう。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2021-04-20 09:18:52 +0900
+</div>
+</div>
+</body>
+</html>

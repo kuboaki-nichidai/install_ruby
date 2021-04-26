@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.12">
+<title>Rubyをインストールする</title>
+<link rel="stylesheet" href="css/mystyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+</div>
+<div id="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+下記文章中では、ワークスペースとして <code>Users\kuboaki\rubybok</code> といった場所を指定していますが、これは、みなさんがCloneしたリポジトリのディレクトリ名で読み替えてください。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect1">
+<h2 id="_rubyをインストールする">Rubyをインストールする</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="windoww.adoc">Windows</a></p>
+</li>
+<li>
+<p><a href="macos.adoc">macOS</a></p>
+</li>
+<li>
+<p><a href="linux.adoc">Linux(Ubuntu)</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="make_simple_script_and_check">【演習】簡単なスクリプトの作成と実行</h3>
+<div class="paragraph">
+<p>Rubyのインストールが済み、演習に使うワークスペースも準備できましたので、簡単なプログラムを作成して動作を確認しましょう。</p>
+</div>
+<div class="sect3">
+<h4 id="_テキストエディターでrubyのプログラムを書く">テキストエディターでRubyのプログラムを書く</h4>
+<div class="paragraph">
+<p>まず <a href="#first_time_writing_op">リスト 1</a> に従って簡単なプログラムを作成しましょう。</p>
+</div>
+<div id="first_time_writing_op" class="exampleblock">
+<div class="title">リスト 1. プログラムを書く手順</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>みなさんが用意したテキストエディターを起動します。</p>
+</li>
+<li>
+<p>新規ファイルを作成します。ファイル名を <code>hello.rb</code> としましょう。</p>
+</li>
+<li>
+<p><a href="#hello.rb">リスト 2</a> のように入力してみましょう。 各行の左端の数字は行番号です（入力しません）。<br>
+入力するプログラムの一部ではありませんので中止しましょう。また、 <code>#</code> から始まる行はコメントです。面倒なら今回は省略してもかまいません。</p>
+</li>
+<li>
+<p>入力できたら、ワークスペース（わたしの場合 <code>C:\Users\kuboaki\rubybook</code> ）に保存します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="hello.rb" class="exampleblock">
+<div class="title">リスト 2. 【Ruby】 <code>hello.rb</code></div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby"># Rubyが動作するかテストする
+puts 'Hello World'        <i class="conum" data-value="1"></i><b>(1)</b>
+puts __FILE__             <i class="conum" data-value="2"></i><b>(2)</b>
+puts 'これが日本語の表示' <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>文字列 <code>Hello World</code>  を表示する。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>__FILE__</code>  という予約語は、実行するときに、このファイルの名前（ <code>hello.rb</code> ）に置き換えられる。</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>日本語の文字列を表示する。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>最初なので、細かい注意も書いておきます。
+1行目のように行のどこか（行頭でなくてもかまいません）に <code>#</code> が見つかると、そこから行末までがコメントとして扱われます。コメントは、プログラムの動作に影響を与えません。ところどころにある行末の数字を書いたコメントは、あとに続く説明の番号に対応づけるためのものです。これも入力しなくてかまいません。<br></p>
+</div>
+<div class="paragraph">
+<p>2行目の <code>puts</code> は、後ろに続く引数を文字列にして出力します。ここでは、引数は <code>'Hello World'</code> という文字列です。 Rubyでは、 <code>'</code> や <code>"</code> で囲まれた文字の並びは「文字列」なので、ここはそのまま <code>Hello World</code> が出力されます。 <code>puts</code> と引数の間を空白で区切るのを忘れないようにしましょう。<br></p>
+</div>
+<div class="paragraph">
+<p>3行目も文字列を出力しますが、引数が <code><em>FILE</em></code> となっています。入力するには、 <code>FILE</code> の前に <code>_</code> （アンダースコア）2つ、後にも2つ書きます。Rubyが、実行中のファイル名を表すために用意した特別な名前です。<br>
+4行目は日本語の文字列の出力です。文字列を囲む  <code>'</code> （シングルクォーテーション）や <code>"</code> （ダブルクォーテーション）は、半角ですので注意しましょう。</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>テキストエディターの設定を調べて、Rubyのソースコードをファイルに保存するときの文字コードと改行コードを確認しましょう。
+Rubyのソースコードを書くときには、文字コードは UTF-8（BOMなし）、改行コードは <code>LF</code> だけという設定が推奨されています。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_作成したプログラムを確認する">作成したプログラムを確認する</h4>
+<div class="paragraph">
+<p>コマンドプロンプトを開いて、ワークスペースのディレクトリへ移動します（ <a href="#cd_workspace_03">リスト 3</a> ）。
+このような操作を「カレントディレクトリをrubybookに変更（移動）する」といいます。</p>
+</div>
+<div id="cd_workspace_03" class="exampleblock">
+<div class="title">リスト 3. 【端末】ワークスペースへ移動する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">C:\Users\kuboaki&gt;cd rubybook
+C:\Users\kuboaki\rubybook&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>移動できたら、 <code>dir</code> （MacやLinuxでは <code>ls</code> ）を使って、作成したファイルがこのディレクトリに保存できていることを確認します（ <a href="#check_hello.rb_created">リスト 4</a> ）。
+見つからないようなら、テキストエディターで保存したときに保存した場所を確認してみましょう。</p>
+</div>
+<div id="check_hello.rb_created" class="exampleblock">
+<div class="title">リスト 4. 【端末】 <code>hello.rb</code> が保存できていることを確認する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-consle" data-lang="consle">C:\Users\kuboaki\rubybook&gt;dir
+ ドライブ C のボリューム ラベルがありません。
+ ボリューム シリアル番号は 1808-7211 です
+
+ C:\Users\kuboaki\rubybook のディレクトリ
+
+2020/04/22  13:42    &lt;DIR&gt;          .
+2020/04/22  13:42    &lt;DIR&gt;          ..
+2020/04/22  13:42               149 hello.rb
+               1 個のファイル                 149 バイト
+               2 個のディレクトリ  207,987,175,424 バイトの空き領域</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>これで、作成したプログラムファイルをワークスペースに保存できていることを確認できました。</p>
+</div>
+<div class="sect4">
+<h5 id="_rubyのプログラムを動かす">Rubyのプログラムを動かす</h5>
+<div class="paragraph">
+<p>作成したプログラムを実行してみましょう。
+コマンド名 <code>ruby</code> に続けて作成したプログラムのファイル名を書きます（ <a href="#run_hello.rb">リスト 5</a> ）。</p>
+</div>
+<div id="run_hello.rb" class="exampleblock">
+<div class="title">リスト 5. 【端末】 <code>hello.rb</code> を実行する</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">C:\Users\kuboaki\rubybook&gt;ruby hello.rb</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>実行すると、 <a href="#output_hello.rb">リスト 6</a> のような出力が得られます。</p>
+</div>
+<div id="output_hello.rb" class="exampleblock">
+<div class="title">リスト 6. 【端末】 <code>hello.rb</code> を実行結果</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">Hello World
+hello.rb
+これが日本語の表示</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>どうでしょう。みなさんの実行結果は同じになりましたか。
+出力の2行目の表示が、作成したファイルの名前 <code>helllo.rb</code> になっていますね。これは、プログラム中の <code>__FILE__</code> という予約語が、実行時にこのファイルの名前に置き換えられた結果です。
+3行目の日本語も正常に表示されていますか。</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_うまくいかないときの対処方法">うまくいかないときの対処方法</h4>
+<div class="paragraph">
+<p><a href="#invalid_multibyte_char">リスト 7</a> のようなメッセージが出力されたら、ファイルの文字コードが UTF-8 になっていないのが原因です。</p>
+</div>
+<div id="invalid_multibyte_char" class="exampleblock">
+<div class="title">リスト 7. 【端末】ファイルの文字コードが UTF-8 でないとき</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">C:\Users\kuboaki\rubybook&gt;ruby hello.rb
+hello.rb:4: invalid multibyte char (UTF-8)
+hello.rb:4: invalid multibyte char (UTF-8)
+（略）
+hello.rb:4: invalid multibyte char (UTF-8)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>このような場合は、作成したプログラムファイルをもう一度テキストエディターで開いて、文字コードを UTF-8 になっているか確認してください。異なっていたら、 UTF-8 に変更して保存し直しましょう。</p>
+</div>
+<div class="paragraph">
+<p><a href="#unterminated_string">リスト 8</a> のようなメッセージが出力されたら、文字列が半角のダブルクォーテーションで囲めていないのが原因です。</p>
+</div>
+<div id="unterminated_string" class="exampleblock">
+<div class="title">リスト 8. 【端末】文字列が閉じていないと指摘されたとき</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">C:\Users\kuboaki\rubybook&gt;ruby hello.rb
+hello.rb:4: unterminated string meets end of file
+...れが日本語の表示’</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>ちょっとわかりにくいですが、メッセージ中の「 <code>日本語の表示’</code> 」の部分、文字列の終わりに全角のシングルクォーテーションが出力されていますね。これを半角に直します。</p>
+</div>
+<div class="paragraph">
+<p>他にも、エラーメッセージが表示されて、期待通り動かないことがあるでしょう。
+入力したファイルをよく見直して、ささやかな違いも見逃さないよう、よく確かめてみてください。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_まとめ">まとめ</h3>
+<div class="paragraph">
+<p>この章では、テキストエディターを導入し、Rubyの利用環境を整備しました。</p>
+</div>
+<div class="paragraph">
+<p>文章を書くときに文字の入力や修正に手間取っていては、文章を書くのに手間取ってしまい、効率が上がらないでしょう。
+プログラミングも文章の作成と似ています。
+プログラムの入力や修正に手間取っていては、作るプログラムに集中できません。
+プログラムを書けるようになるには、テキストエディターの操作に慣れることは重要なことなのです。</p>
+</div>
+<div class="paragraph">
+<p>Rubyのインストールは、ちょっと手間がかかりましたね。
+ですが、いちどインストールしてしまえば、あとは使うだけです。
+ここからは、プログラムを作ることに集中できますね。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2021-04-20 09:17:32 +0900
+</div>
+</div>
+</body>
+</html>

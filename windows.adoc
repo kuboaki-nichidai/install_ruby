@@ -22,10 +22,10 @@
 :section-refsig:
 :chapter-refsig:
 
-= Rubyをインストールする（Windows）
+== Rubyをインストールする（Windows）
 
 
-== Rubyが使えるかどうか調べる
+=== Rubyが使えるかどうか調べる
 
 Ruby が使える状態か判断するために、一度Rubyを起動してみましょう。
 
@@ -67,7 +67,7 @@ Rubyの動作が確認できた人は「 <<make_simple_script_and_check>> 」へ
 確認したバージョンが 2.4 あるいはそれ以前の場合は、この機会に新しいバージョンをインストールしましょう。
 
 [[install_ruby_on_win]]
-== 自分の PC に Ruby を追加する（Windows）
+=== 自分の PC に Ruby を追加する（Windows）
 
 Windows には、Ruby は予めインストールされていません。別途、自分でインストールします。
 みなさんがこの本の演習に使おうと思っている PC が、 Ruby を使えるようになっているかどうか確かめましょう。
@@ -78,7 +78,7 @@ Windows には、Ruby は予めインストールされていません。別途�
 まだ Ruby をインストールしていない方は、ここで Ruby をインストールしましょう。
 
 
-=== Ruby を入手する
+==== Ruby を入手する
 
 RubyInstallerのダウンロードページから。インストーラーをダウンロードします（ <<ruby_installer_download_page>>  ）。
 
@@ -88,7 +88,7 @@ RubyInstallerのダウンロードページ:: `https://rubyinstaller.org/downloa
 .RubyInstallerをダウンロードする
 image::210207-0002_marked.jpg[{half-width}]
 
-=== Ruby をインストールする
+==== Ruby をインストールする
 
 ダウンロードしたインストーラーをエクスプローラーで探します（ <<ruby_installer_exe_file>> ）。
 
@@ -162,7 +162,7 @@ image::GSW-20190910-171347.png[development_toolchain_installation_finish,  {half
 .Rubvのインストール先ディレクトリのチェック
 image::GSW-20190910-171458.png[ruby_location_check,  {half-width}]
 
-=== インストールできたか確認する
+==== インストールできたか確認する
 
 Ruby を起動してみましょう。
 
