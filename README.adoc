@@ -27,7 +27,7 @@ NOTE: 下記文章中では、ワークスペースとして `Users\kuboaki\ruby
 == Rubyをインストールする
 
 
-* link:windoww.adoc[Windows]
+* link:windows.adoc[Windows]
 * link:macos.adoc[macOS]
 * link:linux.adoc[Linux(Ubuntu)]
 
